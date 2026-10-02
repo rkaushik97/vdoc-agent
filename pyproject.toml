@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vdoc-agent"
+version = "0.1.0"
+description = "Agentic RAG over visually rich PDFs: hybrid retrieval, page-cited answers, a validated eval harness, and Qwen3-VL-4B fine-tuned with LoRA, DPO and GRPO"
+readme = "README.md"
+requires-python = ">=3.12"
+# Runtime dependencies are added module by module as each lands. The ML stack in
+# envs/train comes from scripts/setup_envs.sh; envs/serve only runs `vllm serve`.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "pre-commit"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vdoc_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+extend-exclude = ["envs", "data", "checkpoints", "notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

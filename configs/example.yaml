@@ -1,0 +1,50 @@
+# Example run config for vdoc-agent. Each top-level section maps to one package under
+# src/vdoc_agent/. Nothing reads this file yet: the loader lands with the first module that
+# needs it, so the keys below are the plan, not a contract. Copy it, edit the copy, and pass
+# it to the scripts; vdoc_agent.runlog.log_run records the config verbatim in reports/runs/.
+
+run:
+  name: example              # becomes part of the run-log file name
+  seed: 0
+
+paths:
+  data: data/                # raw PDFs, page PNGs, corpus parquet, indexes (git-ignored)
+  checkpoints: checkpoints/  # LoRA adapters and trainer state (git-ignored)
+  runs: reports/runs/        # one JSON per run
+
+serve:                       # the vLLM server from envs/serve, reached over HTTP only
+  base_url: http://127.0.0.1:8000/v1
+  model: Qwen/Qwen3-VL-4B-Instruct
+  max_model_len: 4096
+
+ingest:                      # PDF -> page PNG + page text -> corpus parquet
+  dpi: 144                   # page render resolution for the PNGs
+  text_backend: pymupdf      # pymupdf | docling
+  corpus: data/corpus.parquet
+
+retrieval:                   # per-page candidates, fused with RRF, then reranked
+  top_k: 5
+  bm25: {enabled: true}
+  dense: {enabled: true, model: Qwen/Qwen3-Embedding-0.6B, index: data/index/dense.faiss}
+  colqwen: {enabled: false, model: vidore/colqwen2.5-v0.2}
+  rrf_k: 60
+  reranker: null             # null, or a cross-encoder model id
+
+agent:                       # tool-calling loop and its harness
+  max_steps: 6               # tool calls per question
+  max_tokens_total: 16000    # token budget across all steps of one question
+  retries: 2                 # per failed tool call or malformed model output
+  replay_cache: data/cache/replay.sqlite  # replays recorded model calls in tests and evals
+  abstain_without_citation: true
+
+eval:                        # split rules: evals/README.md
+  split: dev                 # dev | test (test is frozen until day 28)
+  judge_model: Qwen/Qwen3-VL-4B-Instruct
+  bootstrap_samples: 1000
+
+train:                       # LoRA on top of the served model's weights
+  base_model: Qwen/Qwen3-VL-4B-Instruct
+  lora: {r: 16, alpha: 32, dropout: 0.05, targets: [q_proj, k_proj, v_proj, o_proj]}
+  sft: {epochs: 2, lr: 1.0e-4, batch_size: 8}
+  dpo: {beta: 0.1, lr: 5.0e-6}
+  grpo: {group_size: 8, lr: 1.0e-6}
