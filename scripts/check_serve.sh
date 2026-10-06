@@ -11,6 +11,8 @@ STARTUP_TIMEOUT="${STARTUP_TIMEOUT:-900}"   # first run also downloads the model
 LOG="${LOG:-$ROOT/logs/check_serve.log}"
 
 export HF_HOME="${HF_HOME:-$HOME/.cache/huggingface}"
+# FlashInfer's sampler needs nvcc at startup, and no CUDA toolkit here matches vLLM's build.
+export VLLM_USE_FLASHINFER_SAMPLER="${VLLM_USE_FLASHINFER_SAMPLER:-0}"
 # Keep localhost traffic off any site proxy.
 export NO_PROXY="127.0.0.1,localhost${NO_PROXY:+,$NO_PROXY}"
 export no_proxy="$NO_PROXY"

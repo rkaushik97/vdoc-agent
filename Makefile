@@ -13,6 +13,9 @@ GPU_MEM_UTIL  ?= 0.85
 export HF_HOME      ?= $(HOME)/.cache/huggingface
 export UV_CACHE_DIR ?= $(HOME)/.cache/uv
 export PATH         := $(HOME)/.local/bin:$(PATH)
+# FlashInfer's sampler JIT-compiles with nvcc at startup; the GPU nodes have no
+# CUDA toolkit matching vLLM's CUDA 13 build, so use vLLM's PyTorch sampler.
+export VLLM_USE_FLASHINFER_SAMPLER ?= 0
 
 # GPU targets must run on a GPU node. From the login node either open a job
 # first, or pass SLURM=1 to wrap the target in a one-off srun allocation.
