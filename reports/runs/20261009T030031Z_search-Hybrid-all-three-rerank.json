@@ -1,0 +1,25 @@
+{
+  "name": "search-Hybrid all three + rerank",
+  "timestamp": "2026-10-09T03:00:31+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode23",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "method": "Hybrid all three + rerank",
+    "split": "dev"
+  },
+  "metrics": {
+    "hit@5": 0.8796296296296297,
+    "recall@5": 0.5873322778347289,
+    "mrr@10": 0.7056400646678425,
+    "ndcg@10": 0.6364848512675766
+  }
+}

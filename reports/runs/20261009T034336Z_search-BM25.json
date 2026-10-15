@@ -1,0 +1,25 @@
+{
+  "name": "search-BM25",
+  "timestamp": "2026-10-09T03:43:36+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode23",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "method": "BM25",
+    "split": "dev"
+  },
+  "metrics": {
+    "hit@5": 0.8333333333333334,
+    "recall@5": 0.5090767718422947,
+    "mrr@10": 0.6550778953556731,
+    "ndcg@10": 0.5636261760764273
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "search-Dense (Qwen3-Embedding)",
+  "timestamp": "2026-10-09T03:43:36+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode23",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "method": "Dense (Qwen3-Embedding)",
+    "split": "dev"
+  },
+  "metrics": {
+    "hit@5": 0.8518518518518519,
+    "recall@5": 0.5061692626847856,
+    "mrr@10": 0.6232436801881247,
+    "ndcg@10": 0.5446460781301184
+  }
+}

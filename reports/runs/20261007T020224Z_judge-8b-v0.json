@@ -1,0 +1,28 @@
+{
+  "name": "judge-8b-v0",
+  "timestamp": "2026-10-07T02:02:24+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode24",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "answers": "data/runs/answers-v0-dev.jsonl",
+    "answer_model": "Qwen/Qwen3-VL-4B-Instruct",
+    "judge": "Qwen/Qwen3-VL-8B-Instruct-FP8",
+    "split": "dev",
+    "temperature": 0
+  },
+  "metrics": {
+    "accuracy": 0.4351851851851852,
+    "accuracy_evidence_shown": 0.5176470588235295,
+    "accuracy_evidence_not_shown": 0.13043478260869565,
+    "agreement_with_4b_judge": 0.9166666666666666
+  }
+}

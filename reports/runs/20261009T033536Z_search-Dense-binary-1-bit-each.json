@@ -1,0 +1,25 @@
+{
+  "name": "search-Dense, binary (1 bit each)",
+  "timestamp": "2026-10-09T03:35:36+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode23",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "method": "Dense, binary (1 bit each)",
+    "split": "dev"
+  },
+  "metrics": {
+    "hit@5": 0.8148148148148148,
+    "recall@5": 0.46897336580751614,
+    "mrr@10": 0.5703924162257495,
+    "ndcg@10": 0.4966686077974004
+  }
+}

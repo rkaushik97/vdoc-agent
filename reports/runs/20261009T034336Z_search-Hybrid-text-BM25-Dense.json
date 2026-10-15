@@ -1,0 +1,25 @@
+{
+  "name": "search-Hybrid text (BM25 + Dense)",
+  "timestamp": "2026-10-09T03:43:36+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode23",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "method": "Hybrid text (BM25 + Dense)",
+    "split": "dev"
+  },
+  "metrics": {
+    "hit@5": 0.8888888888888888,
+    "recall@5": 0.557919698462999,
+    "mrr@10": 0.6869047619047619,
+    "ndcg@10": 0.5967950347132408
+  }
+}

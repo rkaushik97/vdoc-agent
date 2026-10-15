@@ -1,0 +1,25 @@
+{
+  "name": "search-ColQwen2 (page images)",
+  "timestamp": "2026-10-09T03:43:36+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode23",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "method": "ColQwen2 (page images)",
+    "split": "dev"
+  },
+  "metrics": {
+    "hit@5": 0.8703703703703703,
+    "recall@5": 0.533280080032531,
+    "mrr@10": 0.7162992357436802,
+    "ndcg@10": 0.6149370476246047
+  }
+}

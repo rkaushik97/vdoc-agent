@@ -1,0 +1,30 @@
+{
+  "name": "judge-answers-toy",
+  "timestamp": "2026-10-07T03:59:13+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode24",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "answers": "data/runs/toy-20261007-0514/answers-toy.jsonl",
+    "judge": "Qwen/Qwen3-VL-8B-Instruct-FP8",
+    "split": "dev"
+  },
+  "metrics": {
+    "accuracy": 0.4444444444444444,
+    "accuracy_evidence_shown": 0.5411764705882353,
+    "accuracy_evidence_not_shown": 0.08695652173913043,
+    "citation_precision": 0.49074074074074076,
+    "citation_recall": 0.3586958127807801,
+    "abstain_rate": 0.009259259259259259,
+    "cut_off_rate": 0.018518518518518517,
+    "n": 108
+  }
+}

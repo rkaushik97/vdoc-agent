@@ -1,0 +1,39 @@
+{
+  "name": "answer-think first",
+  "timestamp": "2026-10-09T04:19:48+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode23",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "search": "Hybrid all three + rerank",
+    "k": 3,
+    "view": "image",
+    "order": "best first",
+    "prompt": "rules",
+    "repetition_penalty": 1.0,
+    "think": true,
+    "model": "Qwen/Qwen3-VL-4B-Instruct",
+    "judge": "Qwen/Qwen3-VL-8B-Instruct-FP8",
+    "split": "dev"
+  },
+  "metrics": {
+    "accuracy": 0.39814814814814814,
+    "lo": 0.3055555555555556,
+    "hi": 0.49074074074074076,
+    "diff": -0.06481481481481481,
+    "diff_lo": -0.12962962962962962,
+    "diff_hi": 0.0,
+    "faithful": 0.6883116883116883,
+    "citation_precision": 0.4722222222222222,
+    "citation_recall": 0.7191011235955056,
+    "abstain": 0.14814814814814814
+  }
+}

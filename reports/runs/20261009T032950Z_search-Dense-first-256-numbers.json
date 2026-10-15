@@ -1,0 +1,25 @@
+{
+  "name": "search-Dense, first 256 numbers",
+  "timestamp": "2026-10-09T03:29:50+00:00",
+  "git": {
+    "commit": "afd8cd0ba6c9470d7e3f14f55d400570e5a94902",
+    "dirty": true
+  },
+  "host": "gnode23",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "versions": {
+    "python": "3.12.15",
+    "torch": "2.14.1+cu132",
+    "transformers": "5.18.0"
+  },
+  "config": {
+    "method": "Dense, first 256 numbers",
+    "split": "dev"
+  },
+  "metrics": {
+    "hit@5": 0.8796296296296297,
+    "recall@5": 0.5097878919978593,
+    "mrr@10": 0.6268004115226338,
+    "ndcg@10": 0.5314277610467556
+  }
+}
